@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Paid measurement or diagnosis (guaranteed 24-48h, written)
+    url: https://conatus.jahn.ai/ai-engineering/
+    about: Fixed-price single-cell verification, benchmarks, and incident diagnosis on Blackwell hardware.

@@ -1,0 +1,49 @@
+name: Request a measurement
+description: Ask for a serving cell to be measured on RTX PRO 6000 Blackwell (sm_120) or DGX Spark GB10 (sm_121)
+title: "[request] <model> / <runtime> / <quantization> / <hardware>"
+labels: [measurement-request]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Cells with public value are measured free as capacity allows and added to the matrix.
+        Guaranteed 24-48h written delivery with raw logs is available as a paid engagement: https://conatus.jahn.ai/ai-engineering/#sku-e
+  - type: input
+    id: model
+    attributes:
+      label: Model (HF repo id)
+      placeholder: org/model-name
+    validations:
+      required: true
+  - type: dropdown
+    id: runtime
+    attributes:
+      label: Runtime
+      options: [vLLM, SGLang, other (specify in notes)]
+    validations:
+      required: true
+  - type: input
+    id: quantization
+    attributes:
+      label: Quantization / KV dtype
+      placeholder: e.g. NVFP4 weights, fp8 KV
+    validations:
+      required: true
+  - type: dropdown
+    id: hardware
+    attributes:
+      label: Target hardware
+      options: [RTX PRO 6000 Blackwell 96GB (sm_120), DGX Spark GB10 128GB unified (sm_121), both]
+    validations:
+      required: true
+  - type: textarea
+    id: workload
+    attributes:
+      label: Workload shape and what you need to learn
+      placeholder: context length, concurrency, latency vs throughput priority, and the decision this informs
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (flags, versions, deadline)
